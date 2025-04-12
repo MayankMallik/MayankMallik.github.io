@@ -1,19 +1,22 @@
 // Format numbers with Indian commas (from your original HTML)
 function formatNumber(input) {
-    let value = input.value.replace(/,/g, '');
-    value = value.replace(/[^0-9]/g, '');
-    
+    let value = input.value.replace(/,/g, ''); // Remove existing commas
+    value = value.replace(/[^0-9]/g, ''); // Keep only digits
+
     if (value.length > 3) {
-        let lastThree = value.slice(-3);
-        let otherNumbers = value.slice(0, -3);
-        
+        let lastThree = value.slice(-3); // Last 3 digits
+        let otherNumbers = value.slice(0, -3); // All other digits
+
         if (otherNumbers) {
+            // Add commas every 2 digits from the right in otherNumbers
             otherNumbers = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",");
         }
-        
-        value = otherNumbers + "," + lastThree;
+
+        value = otherNumbers ? otherNumbers + "," + lastThree : lastThree;
+    } else {
+        value = value; // No formatting needed for 3 or fewer digits
     }
-    
+
     input.value = value;
 }
 
