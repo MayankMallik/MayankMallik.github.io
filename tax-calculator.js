@@ -1,22 +1,19 @@
 // Format numbers with Indian commas (from your original HTML)
 function formatNumber(input) {
-    let value = input.value.replace(/,/g, ''); // Remove existing commas
-    value = value.replace(/[^0-9]/g, ''); // Keep only digits
-
+    let value = input.value.replace(/,/g, '');
+    value = value.replace(/[^0-9]/g, '');
+    
     if (value.length > 3) {
-        let lastThree = value.slice(-3); // Last 3 digits
-        let otherNumbers = value.slice(0, -3); // All other digits
-
+        let lastThree = value.slice(-3);
+        let otherNumbers = value.slice(0, -3);
+        
         if (otherNumbers) {
-            // Add commas every 2 digits from the right in otherNumbers
             otherNumbers = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",");
         }
-
-        value = otherNumbers ? otherNumbers + "," + lastThree : lastThree;
-    } else {
-        value = value; // No formatting needed for 3 or fewer digits
+        
+        value = otherNumbers + "," + lastThree;
     }
-
+    
     input.value = value;
 }
 
@@ -100,9 +97,18 @@ document.getElementById('taxForm').addEventListener('submit', function(e) {
 
     // Format results with Indian number format
     const formatIndian = num => {
-        num = num.toFixed(2);
+        num = num.toFixed(2); // Keep 2 decimal places
         let [integer, decimal] = num.split('.');
-        integer = integer.replace(/\B(?=(\d{2})+(?!\d))/g, ",");
+        
+        if (integer.length > 3) {
+            let lastThree = integer.slice(-3);
+            let otherNumbers = integer.slice(0, -3);
+            if (otherNumbers) {
+                otherNumbers = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",");
+            }
+            integer = otherNumbers ? otherNumbers + "," + lastThree : lastThree;
+        }
+        
         return integer + (decimal ? `.${decimal}` : '');
     };
 
