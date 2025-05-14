@@ -21,6 +21,14 @@ body {
     overflow-y: auto;
 }
 
+.page {
+  overflow-y: auto; /* Scrolling now happens here */
+  width: 100%;
+  max-width: 100%;
+  height: 100vh; /* Same height as body */
+  padding-top: 2rem;
+}
+
 h1 {
     color: #333;
     text-align: center;
