@@ -5,14 +5,9 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Changed to align to the top */
+    align-items: flex-start;
     height: 100vh;
-    padding-top: 2rem; /* Added padding at the top */
-    /*background-image: url('/static/hq720.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;*/
+    padding-top: 2rem;
 }
 
 .container {
@@ -20,7 +15,7 @@ body {
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 800px; /* Wider container */
+    max-width: 800px;
     width: 100%;
 }
 
@@ -70,7 +65,7 @@ input {
     border-radius: 4px;
     font-size: 1rem;
     cursor: pointer;
-    width: 100%; /* Same width as the Show Details button */
+    width: 100%;
 }
 
 .calculate-button:hover {
@@ -93,27 +88,27 @@ input {
 }
 
 .old-regime {
-    background-color: #ffe6f9; /* Very pale blue */
+    background-color: #ffe6f9;
 }
 
 .old-regime .tax-amount {
-    color: #cc00cc; /* Dark blue */
+    color: #cc00cc;
 }
 
 .new-regime {
-    background-color: #e6f0ff; /* Very pale magenta */
+    background-color: #e6f0ff;
 }
 
 .new-regime .tax-amount {
-    color: #0044cc; /* Magenta */
+    color: #0044cc;
 }
 
 .proposed-regime {
-    background-color: #e6ffe6; /* Very pale green */
+    background-color: #e6ffe6;
 }
 
 .proposed-regime .tax-amount {
-    color: #009900; /* Green */
+    color: #009900;
 }
 
 .tax-regime h2 {
@@ -132,20 +127,34 @@ input {
     color: #666;
     margin: 0.5rem 0;
 }
+
 .headings {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .grid-column {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
+
 .section-heading {
     font-size: 1.2rem;
     color: #333;
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid #eee;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .input-grid {
+        grid-template-columns: 1fr; /* Stack the columns vertically */
+    }
+
+    .grid-column {
+        width: 100%; /* Ensure full width for each section */
+    }
 }
