@@ -1,170 +1,66 @@
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f9;
+/* Removes default browser spacing */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* Centers the grid on the screen */
+body {
+    background-color: #f0f2f5;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-    padding-top: 2rem;
-    overflow-x: hidden;
-}
-
-.container {
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-    width: 100%;
-    overflow-y: auto;
-}
-
-.page {
-  overflow-y: auto; /* Scrolling now happens here */
-  width: 100%;
-  max-width: 100%;
-  height: 100vh; /* Same height as body */
-  padding-top: 2rem;
-}
-
-h1 {
-    color: #333;
-    text-align: center;
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
-}
-
-.tax-form {
-    display: flex;
-    flex-direction: column;
-}
-
-.input-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
-
-.input-group {
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-    color: #555;
-}
-
-input {
-    padding: 0.75rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-    color: #333;
-}
-
-.calculate-button {
-    padding: 0.75rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
-    width: 100%;
-}
-
-.calculate-button:hover {
-    background-color: #0056b3;
-}
-
-.results {
-    margin-top: 2rem;
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-}
-
-.tax-regime {
-    padding: 1rem;
-    border-radius: 4px;
-    width: 32%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.old-regime {
-    background-color: #ffe6f9;
-}
-
-.old-regime .tax-amount {
-    color: #cc00cc;
-}
-
-.new-regime {
-    background-color: #e6f0ff;
-}
-
-.new-regime .tax-amount {
-    color: #0044cc;
-}
-
-.proposed-regime {
-    background-color: #e6ffe6;
-}
-
-.proposed-regime .tax-amount {
-    color: #009900;
-}
-
-.tax-regime h2 {
-    color: #555;
-    margin-bottom: 1rem;
-    font-size: 1.25rem;
-}
-
-.tax-amount {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin: 0.5rem 0;
-}
-
-.effective-rate {
-    color: #666;
-    margin: 0.5rem 0;
-}
-
-.headings {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
 }
 
-.grid-column {
+/* The 2x2 Grid Structure */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 1 / 1;
+}
+
+/* The Individual Boxes */
+.box {
+    background: white;
+    border-radius: 15px;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-}
-
-.section-heading {
-    font-size: 1.2rem;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
     color: #333;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid #eee;
+    font-weight: bold;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s, background 0.2s, color 0.2s;
+    text-align: center;
+    padding: 20px;
 }
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    .input-grid {
-        grid-template-columns: 1fr; /* Stack the columns vertically */
-    }
+/* Interaction when hovering */
+.box:hover {
+    transform: scale(1.05);
+    background: #eef6ff;
+    color: #007bff;
+}
 
-    .grid-column {
-        width: 100%; /* Ensure full width for each section */
+/* Icon size and spacing */
+.icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* Responsive adjustment for small phones */
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: 1fr;
+        aspect-ratio: auto;
     }
 }
