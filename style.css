@@ -16,15 +16,13 @@ body {
     padding: 20px;
 }
 
-/* The 3x2 Grid Structure */
 .grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns horizontally */
+    grid-template-columns: repeat(4, 1fr); /* Changed from 3 to 4 columns */
     gap: 20px;
     width: 100%;
-    max-width: 900px; /* Increased width for 3 columns */
+    max-width: 1100px; /* Increased width to accommodate the extra column */
 }
-
 /* The Individual Boxes */
 .box {
     background: white;
