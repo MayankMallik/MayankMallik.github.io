@@ -1,71 +1,27 @@
-/* Removes default browser spacing */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
 }
 
-/* Centers the grid on the screen */
 body {
-    background-color: #f0f2f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
-    align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    padding: 20px;
+    background-color: #f9ffff;
 }
 
-/* The 5x3 Grid Structure */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); 
-    gap: 20px;
-    width: 100%;
-    max-width: 1300px; 
-}
-
-/* The Individual Boxes */
 .box {
-    background: white;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
+    background: transparent;
+    padding: 30px;
+    max-width: 900px;
+    width: 100%;
     color: #333;
-    font-weight: bold;
-    font-size: 1.1rem; /* Slightly smaller text to fit 3-column layout */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: transform 0.2s, background 0.2s, color 0.2s;
-    text-align: center;
-    padding: 30px 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
 
-/* Interaction when hovering */
-.box:hover {
-    transform: scale(1.05);
-    background: #eef6ff;
-    color: #007bff;
-}
-
-/* Icon size and spacing */
-.icon {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-/* Responsive adjustment for tablets and small screens */
-@media (max-width: 768px) {
-    .grid {
-        grid-template-columns: repeat(2, 1fr); /* Drop to 2 columns on tablets */
-    }
-}
-
-/* Responsive adjustment for mobile phones */
-@media (max-width: 480px) {
-    .grid {
-        grid-template-columns: 1fr; /* 1 column on small phones */
-    }
+object {
+    width: 100%;
+    height: 800px;
+    margin-top: 20px;
 }
